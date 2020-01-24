@@ -1,0 +1,29 @@
+
+.pagination-nav {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.page-item button {
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgba(0,0,0,0.50);
+    cursor: pointer;
+}
+
+
+
+
+.page-item a:hover, .page-item .current {
+    border: 2px solid rgba(0,0,0,0.90);
+    font-weight: bold;
+}
