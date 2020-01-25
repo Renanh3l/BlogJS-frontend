@@ -8,13 +8,15 @@ import {
 
 // Páginas
 import Home from './pages/Home/';
+import Login from './pages/Login/';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/:page" component={Home}/>
+        <Route path="/login" component={Login}/>
+        <Route exact path="/:page" component={Home}/>
       </Switch>
     </Router>
   );

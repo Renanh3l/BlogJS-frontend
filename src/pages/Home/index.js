@@ -4,7 +4,7 @@ import api from "../../services/api";
 
 import "./styles.css";
 
-import Header from "../../components/Header/header";
+import Header from "../../components/Header";
 import Pagination from "../../components/Pagination";
 import PostBox from "../../components/PostBox/PostBox";
 
