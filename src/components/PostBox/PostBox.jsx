@@ -2,7 +2,7 @@ import React from 'react';
 
 const PostBox = ({post}) => {
   return (
-    <div key={post._id} className="postBox">
+    <div className="postBox">
       <header>
         <img src={post.bannerURL} alt="" />
         <h1>{post.title}</h1>

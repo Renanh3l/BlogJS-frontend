@@ -25,8 +25,6 @@ export default function Pagination({ props, currentPage }) {
     getNumbers();
   }, []);
 
-  console.log(currentPage);
-
   function changePage(page) {
     history.push(`/${page}`);
   }

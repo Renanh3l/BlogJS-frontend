@@ -44,7 +44,7 @@ export default function Home() {
         ) : (
           <section id="postsContainer">
             {posts.map(post => (
-              <PostBox post={post} />
+              <PostBox key={post._id} post={post} />
             ))}
           </section>
         )}
