@@ -22,7 +22,7 @@ export default function Login() {
       });
 
       if (response.data.status === "success") {
-        login(response.data.data.token);
+        login(response.data.data);
         history.push('/');
       } else {
         setAlert(response.data.message);

@@ -1,0 +1,19 @@
+#profileContainer {
+    margin-top: 70px;
+    text-align: center;
+}
+
+#profileContainer h1 {
+    font-size: 54px;
+    font-weight: 600;
+}
+
+#profileContainer .user-info {
+    margin-top: 50px;
+}
+
+#profileContainer .user-info img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

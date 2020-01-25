@@ -1,24 +1,40 @@
-import React from 'react';
+import React, { Fragment } from "react";
 
 import {
   Route,
   BrowserRouter as Router,
-  Switch
-} from 'react-router-dom';
+  Switch,
+  Redirect
+} from "react-router-dom";
 
 // Páginas
-import Home from './pages/Home/';
-import Login from './pages/Login/';
-import Register from './pages/Register/';
+import Home from "./pages/Home/";
+import Login from "./pages/Login/";
+import Register from "./pages/Register/";
+import Profile from "./pages/Profile/";
+import { isAuthenticated } from "./services/auth";
+
+// Redireciona para página de login se o usuário não estiver logado
+const AuthenticatedRoute = (props) => (
+  <Fragment>
+      { isAuthenticated() ? props.children : <Redirect to="/login" /> }
+  </Fragment>
+)
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
-        <Route exact path="/:page" component={Home}/>
+        <Route exact path="/" component={Home} />
+
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+
+        <AuthenticatedRoute>
+          <Route exact path="/profile" component={Profile} />
+        </AuthenticatedRoute>
+        
+        <Route path="/:page" component={Home} />
       </Switch>
     </Router>
   );
