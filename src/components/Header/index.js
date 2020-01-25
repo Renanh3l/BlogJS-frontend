@@ -31,10 +31,14 @@ function Header() {
                 </button>
               </li>
               <li>
-                <button onClick={() => {
-                  logout()
-                  history.replace('/');
-                  }}>Sair</button>
+                <button
+                  onClick={() => {
+                    logout();
+                    history.replace("/");
+                  }}
+                >
+                  Sair
+                </button>
               </li>
             </ul>
           ) : (
@@ -49,7 +53,13 @@ function Header() {
                 </button>
               </li>
               <li>
-                <button onClick={() => {}}>Registro</button>
+                <button
+                  onClick={() => {
+                    history.push("/register");
+                  }}
+                >
+                  Registro
+                </button>
               </li>
             </ul>
           )}
