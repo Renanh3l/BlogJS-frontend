@@ -4,7 +4,7 @@ import {
   Route,
   BrowserRouter as Router,
   Switch,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 
 // Páginas
@@ -12,14 +12,15 @@ import Home from "./pages/Home/";
 import Login from "./pages/Login/";
 import Register from "./pages/Register/";
 import Profile from "./pages/Profile/";
-import { isAuthenticated } from "./services/auth";
+import NewPost from "./pages/NewPost/";
+import { isAuthenticated, isAdmin } from "./services/auth";
 
 // Redireciona para página de login se o usuário não estiver logado
-const AuthenticatedRoute = (props) => (
+const AuthenticatedRoute = props => (
   <Fragment>
-      { isAuthenticated() ? props.children : <Redirect to="/login" /> }
+    {isAuthenticated() ? props.children : <Redirect to="/login" />}
   </Fragment>
-)
+);
 
 function App() {
   return (
@@ -32,8 +33,9 @@ function App() {
 
         <AuthenticatedRoute>
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/admin/newpost" component={NewPost} />
         </AuthenticatedRoute>
-        
+
         <Route path="/:page" component={Home} />
       </Switch>
     </Router>

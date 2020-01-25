@@ -1,0 +1,79 @@
+#newpostContainer {
+    margin-top: 70px;
+    text-align: center;
+}
+
+#newpostContainer h1 {
+    font-size: 54px;
+    font-weight: 600;
+}
+
+#newpostContainer .newpostForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 60px;
+    align-items: center;
+    width: 600px;
+}
+
+#newpostContainer .newpostForm .input-group {
+    margin: 5px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#newpostContainer .newpostForm .input-group {
+    margin: 5px;
+    display: flex;
+    flex-direction: c;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#newpostContainer .newpostForm .input-group input {
+    width: 80%;
+}
+
+#newpostContainer .newpostForm .input-content-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#newpostContainer .newpostForm .input-content-group label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#newpostContainer .newpostForm .input-content-group textarea {
+    height: 200px;
+    width: 100%;
+    font-size: 18px;
+}
+
+#newpostContainer button {
+    margin: 15px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: rgb(26, 26, 26);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#newpostContainer button:hover {
+    margin: 15px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    background: rgb(255, 100, 100);
+    transition: linear 200ms;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+}

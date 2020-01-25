@@ -23,7 +23,7 @@ export default function Login() {
 
       if (response.data.status === "success") {
         login(response.data.data);
-        history.push('/');
+        history.replace('/');
       } else {
         setAlert(response.data.message);
       }

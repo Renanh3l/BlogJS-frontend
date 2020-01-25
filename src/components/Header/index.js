@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import "./styles.css";
 import { useHistory } from "react-router-dom";
-import { isAuthenticated, logout } from "../../services/auth";
+import { isAuthenticated, logout, userData } from "../../services/auth";
 
 function Header() {
   const history = useHistory();
+  const [user, setUser] = useState({});
+
+  useEffect(()=> {
+    function loadUser() {
+      setUser(userData);
+    }
+
+    loadUser();
+  }, [])
 
   return (
     <header id="mainHeader">
@@ -21,6 +30,17 @@ function Header() {
         <nav>
           {isAuthenticated() ? (
             <ul>
+              {(user !== null && user.admin === true) && (
+                <li>
+                  <button
+                    onClick={() => {
+                      history.push("/admin/newpost");
+                    }}
+                  >
+                    Novo Post
+                  </button>
+                </li>
+              )}
               <li>
                 <button
                   onClick={() => {
