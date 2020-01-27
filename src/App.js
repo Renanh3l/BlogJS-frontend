@@ -13,7 +13,8 @@ import Login from "./pages/Login/";
 import Register from "./pages/Register/";
 import Profile from "./pages/Profile/";
 import NewPost from "./pages/NewPost/";
-import { isAuthenticated, isAdmin } from "./services/auth";
+import PostPage from "./pages/PostPage/";
+import { isAuthenticated } from "./services/auth";
 
 // Redireciona para página de login se o usuário não estiver logado
 const AuthenticatedRoute = props => (
@@ -32,6 +33,8 @@ function App() {
         <Route exact path="/user/login" component={Login} />
         <Route exact path="/user/register" component={Register} />
 
+        <Route exact path="/post/:name" component={PostPage}/>
+        
         <AuthenticatedRoute>
           <Route exact path="/user/profile" component={Profile} />
           <Route exact path="/admin/newpost" component={NewPost} />

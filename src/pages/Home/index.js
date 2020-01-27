@@ -10,6 +10,8 @@ import PostBox from "../../components/PostBox/PostBox";
 
 import { useParams } from "react-router-dom";
 
+import CircularProgress from '@material-ui/core/CircularProgress'
+
 export default function Home() {
   const { page = 1 } = useParams();
   const [loading, setLoading] = useState(true);
@@ -20,10 +22,13 @@ export default function Home() {
       setLoading(true);
       const response = await api.get(`/post/${page}`);
       setPosts(response.data);
-      setLoading(false);
+      setTimeout(()=> {setLoading(false)}, 500);
     };
     loadPagePosts(page);
+    
+    
   }, [page]);
+
 
   return (
     <>
@@ -39,7 +44,7 @@ export default function Home() {
 
         {loading ? (
           <div id="loadingContainer">
-            <h1>Carregando...</h1>
+            <CircularProgress />
           </div>
         ) : (
           <section id="postsContainer">

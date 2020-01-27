@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 
 import "./styles.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 
 export default function Pagination({ props, currentPage }) {
   const [pageNumbers, setPageNumbers] = useState([]);
@@ -26,7 +26,7 @@ export default function Pagination({ props, currentPage }) {
   }, []);
 
   function changePage(page) {
-    history.push(`/${page}`);
+    history.replace(`/${page}`);
   }
 
   return (
@@ -35,11 +35,24 @@ export default function Pagination({ props, currentPage }) {
         {pageNumbers.map(page => (
           <li key={page} className="page-item">
             {page == currentPage ? (
-              <button href="#" onClick={() => {return false}} className="current">
+              <button
+                href="#"
+                onClick={() => {
+                  return false;
+                }}
+                className="current"
+              >
                 {page.toString()}
               </button>
             ) : (
-              <button href="#" onClick={()=>{changePage(page)}}>{page.toString()}</button>
+              <button
+                href="#"
+                onClick={() => {
+                  changePage(page);
+                }}
+              >
+                {page.toString()}
+              </button>
             )}
           </li>
         ))}
