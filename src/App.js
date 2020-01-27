@@ -7,6 +7,8 @@ import {
   Redirect,
 } from "react-router-dom";
 
+import {createBrowserHistory} from 'history';
+
 // Páginas
 import Home from "./pages/Home/";
 import Login from "./pages/Login/";
@@ -23,9 +25,11 @@ const AuthenticatedRoute = props => (
   </Fragment>
 );
 
+const history = createBrowserHistory();
+
 function App() {
   return (
-    <Router>
+    <Router history={history}>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/:page" component={Home} />
@@ -33,7 +37,7 @@ function App() {
         <Route exact path="/user/login" component={Login} />
         <Route exact path="/user/register" component={Register} />
 
-        <Route exact path="/post/:name" component={PostPage}/>
+        <Route exact path="/post/:title" component={PostPage}/>
         
         <AuthenticatedRoute>
           <Route exact path="/user/profile" component={Profile} />

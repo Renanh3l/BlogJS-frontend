@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 
 import "./styles.css";
-import { useHistory, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export default function Pagination({ props, currentPage }) {
   const [pageNumbers, setPageNumbers] = useState([]);

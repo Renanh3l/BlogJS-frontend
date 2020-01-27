@@ -16,6 +16,8 @@ export default function NewPost() {
   async function handlePost(e) {
     e.preventDefault();
 
+    console.log(content);
+
     try {
       const response = await api.post("/post/new", {
         title: title,
@@ -28,7 +30,7 @@ export default function NewPost() {
 
       setAlert(response.data.message);
     } catch (err) {
-      setAlert("Houve um problema no login. Verifique seus dados!");
+      setAlert("Houve um problema no envio. Verifique os dados!");
     }
   }
 

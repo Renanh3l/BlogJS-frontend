@@ -1,8 +1,17 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const PostBox = ({post}) => {
+  const history = useHistory();
+
+  function showPostDetails(post) {
+    history.push({pathname: `/post/${post.title}`, state: {
+      postInfo: post,
+    }})
+  }
+
   return (
-    <div className="postBox">
+    <div className="postBox" onClick={()=>{showPostDetails(post)}}>
       <header>
         <img src={post.bannerURL} alt="" />
         <h1>{post.title}</h1>
