@@ -44,7 +44,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => {
-                    history.push("/profile");
+                    history.push("/user/profile");
                   }}
                 >
                   Perfil
@@ -66,7 +66,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => {
-                    history.push("/login");
+                    history.push("/user/login");
                   }}
                 >
                   Login
@@ -75,7 +75,7 @@ function Header() {
               <li>
                 <button
                   onClick={() => {
-                    history.push("/register");
+                    history.push("/user/register");
                   }}
                 >
                   Registro

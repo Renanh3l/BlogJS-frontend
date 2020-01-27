@@ -27,16 +27,16 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/:page" component={Home} />
 
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
+        <Route exact path="/user/login" component={Login} />
+        <Route exact path="/user/register" component={Register} />
 
         <AuthenticatedRoute>
-          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/user/profile" component={Profile} />
           <Route exact path="/admin/newpost" component={NewPost} />
         </AuthenticatedRoute>
 
-        <Route path="/:page" component={Home} />
       </Switch>
     </Router>
   );
