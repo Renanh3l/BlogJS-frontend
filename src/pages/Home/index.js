@@ -20,9 +20,9 @@ export default function Home() {
   useEffect(() => {
     const loadPagePosts = async page => {
       setLoading(true);
-      const response = await api.get(`/post/${page}`);
+      const response = await api.get(`/post/blog/${page}`);
       setPosts(response.data);
-      setTimeout(()=> {setLoading(false)}, 500);
+      setTimeout(()=> {setLoading(false)}, 350);
     };
     loadPagePosts(page);
     
@@ -54,7 +54,7 @@ export default function Home() {
           </section>
         )}
 
-        <Pagination currentPage={page} />
+        <Pagination currentPage={parseInt(page)} />
       </div>
     </>
   );

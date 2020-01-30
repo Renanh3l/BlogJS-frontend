@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 
 import {
   Route,
-  BrowserRouter as Router,
+  Router,
   Switch,
   Redirect,
 } from "react-router-dom";
@@ -37,7 +37,7 @@ function App() {
         <Route exact path="/user/login" component={Login} />
         <Route exact path="/user/register" component={Register} />
 
-        <Route exact path="/post/:title" component={PostPage}/>
+        <Route exact path="/post/:postId" component={PostPage}/>
         
         <AuthenticatedRoute>
           <Route exact path="/user/profile" component={Profile} />

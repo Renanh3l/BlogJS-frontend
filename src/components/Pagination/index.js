@@ -34,7 +34,7 @@ export default function Pagination({ props, currentPage }) {
       <ul className="pagination">
         {pageNumbers.map(page => (
           <li key={page} className="page-item">
-            {page == currentPage ? (
+            {page === currentPage ? (
               <button
                 href="#"
                 onClick={() => {

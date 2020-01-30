@@ -5,9 +5,7 @@ const PostBox = ({post}) => {
   const history = useHistory();
 
   function showPostDetails(post) {
-    history.push({pathname: `/post/${post.title}`, state: {
-      postInfo: post,
-    }})
+    history.push(`/post/${post._id}`)
   }
 
   return (
